@@ -1,0 +1,181 @@
+\documentclass[12pt]{report}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\usepackage{setspace}
+\doublespace
+\usepackage{indentfirst}								% TeX will automatically convert eps --> pdf in pdflate	
+\usepackage{amssymb}
+\usepackage{lscape}
+%SetFonts
+
+%SetFonts
+
+
+\title{Paper 4 - Preliminary Results}
+\author{Les Stanaland}
+\date{23 March 2018}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\section*{Data and Hypotheses}
+To test these hypotheses, three ratios were created from data available from the World Bank, IMF, British Petroleum, and the United States Energy Information Administration from 1999 to 2016. Countries used were chosen as all countries that had at least 100,000 million barrels of proven oil reserves. I chose this metric, proven reserves, because it acts as a randomizer wholly separate from any effects of institutions or leaders. 
+
+To test the rent-seeking hypothesis, which suggests that country leaders will use natural resource revenue in lieu of domestic tax revenue to fund government or perhaps themselves, which the literature suggests would cause a downward effect on GDP. The ratio used is the amount of oil revenue a country receives in a year divided by the total tax revenue. We would expect therefore that a larger ratio would indicate a heavier reliance of oil revenues and a lower GDP. 
+
+The investor behavior hypothesis suggests that a higher price of oil would lead to more investment in the resource area, and less domestic investment, while a lower price of oil would lead to more domestic investment. To test this hypothesis, I used the world price of Brent crude as the measure for global oil price, and the World Bank's total investment measure ratio. A larger value here suggests that investment in oil is preferable to domestic investment, leading to a lower GDP. 
+
+Lastly, how a country taxes its extractive industries may have an effect on GDP. In this hypothesis, different tax structures would lend themselves to either an overproduction of oil and under-reliance on domestic tax revenues or a production level that balances resource and non-resource revenue. The ratio then between oil tax revenue and non-resource tax revenue comprises my third variable of interest. The main dependent variable is logged real per capita GDP to control for population as well as inflation. 
+
+Control variables for this study include the Polity IV scores as a measure of institutional effectiveness, as well as population and a dummy variable to represent a resource cursed country. To qualify as ``resource cursed'', a country needs to be considered a low-income country as well as have at least 50 per cent of all exports as oil exports. An argument could be made that this measure is collinear to the main dependent variable; however, since both conditions must be met, a country may export more than 50 percent but still may not be considered by the IMF as ``low income''.
+
+I use a balanced panel of 41 countries over 18 years, using panel linear regression as well as a test for lagged variables. Due to missing data in which no techniques such as multiple imputation could be used to recover, the original set of 44 countries was shortened by the deletion of Iraq, Qatar, and Turkmenistan.
+
+\section*{Models and Results}
+Table 1 shows the preliminary results of the model. Model 1 shows just the three hypotheses, and without controls both the rent-seeking and investor behavior are significant with the hypothesized signs; an increase in those variables lead to a decrease in real per capita GDP. The investor effect disappears once the institutional variable in introduced in Model 2, and the introduction of all controls indicate that only the rent seeking hypothesis is significant, but now in a positive direction. This could be an indication seen throughout the literature; namely that some countries can have a resource blessing. The method of country choice gave a good mix of advanced and developing countries; this could explain this seemingly incongruous relationship. Clearly the status as a ``cursed`` country come through as very negatively significant, as we would expect. The strongest predictor is the dummy variable for being a resource cursed country, which creates the possibility that my previous theory regarding the conditions for being coded as resource cursed country made be an error. If more countries received the designation of a cursed country because of their low-income status, naturally that would be collinear with the main dependent variable. These results could also demonstrate evidence that resource countries do in fact have lower levels of economic growth. 
+
+Augmented Dickey-Fuller tests were performed on the main independent variables to test for time series stationarity, and the investor behavior ratio showed slight evidence of non-stationarity. Table 2 shows the models again, this time with a lagged investor behavior variable. Rent seeking is still the only significant variable, and we see the strongest significance among the the resource cursed countries. 
+
+
+\begin{landscape}
+\begin{table}[h] \centering 
+  \caption{Regression Results - Fixed Effects} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & \multicolumn{4}{c}{Real per capita GDP, logged} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Rent-seeking & $-$0.067$^{***}$ & $-$0.026 & 0.072$^{***}$ & 0.037$^{**}$ \\ 
+  & (0.022) & (0.022) & (0.019) & (0.018) \\ 
+  & & & & \\ 
+ Investor Behavior & $-$0.029$^{**}$ & $-$0.005 & 0.005 & $-$0.011 \\ 
+  & (0.011) & (0.011) & (0.010) & (0.009) \\ 
+  & & & & \\ 
+ Tax Structures & $-$0.0004 & $-$0.0005 & 0.0001 & 0.0001 \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Polity IV &  & 0.013$^{***}$ & 0.007$^{***}$ & 0.006$^{***}$ \\ 
+  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Resource Curse &  &  & $-$0.658$^{***}$ & $-$0.735$^{***}$ \\ 
+  &  &  & (0.040) & (0.038) \\ 
+  & & & & \\ 
+ Population &  &  &  & $-$0.000$^{***}$ \\ 
+  &  &  &  & (0.000) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 738 & 702 & 702 & 702 \\ 
+R$^{2}$ & 0.022 & 0.074 & 0.337 & 0.436 \\ 
+Adjusted R$^{2}$ & $-$0.005 & 0.046 & 0.315 & 0.417 \\ 
+F Statistic & 5.386$^{***}$ (df = 3; 717) & 13.620$^{***}$ (df = 4; 680) & 68.911$^{***}$ (df = 5; 679) & 87.447$^{***}$ (df = 6; 678) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+\end{landscape}
+
+\begin{table}[h] \centering 
+  \caption{Regression Results - Fixed Effects with 1 Year Lag for Hypothesis 2} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{Real per capita GDP, logged} \\ 
+\\[-1.8ex] & (5) & (6) & (7)\\ 
+\hline \\[-1.8ex] 
+ Rent seeking & $-$0.026 & 0.071$^{***}$ & 0.040$^{**}$ \\ 
+  & (0.022) & (0.019) & (0.018) \\ 
+  & & & \\ 
+ Investor Behavior, lagged & $-$0.005 & 0.00004 & $-$0.002 \\ 
+  & (0.009) & (0.008) & (0.007) \\ 
+  & & & \\ 
+ Tax Structure & $-$0.0004 & 0.0001 & 0.0001 \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Polity IV & 0.013$^{***}$ & 0.007$^{***}$ & 0.006$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) \\ 
+  & & & \\ 
+ Resource Curse &  & $-$0.657$^{***}$ & $-$0.736$^{***}$ \\ 
+  &  & (0.040) & (0.038) \\ 
+  & & & \\ 
+ Population &  &  & $-$0.000$^{***}$ \\ 
+  &  &  & (0.000) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 702 & 702 & 702 \\ 
+R$^{2}$ & 0.074 & 0.336 & 0.435 \\ 
+Adjusted R$^{2}$ & 0.046 & 0.315 & 0.416 \\ 
+F Statistic & 13.657$^{***}$ (df = 4; 680) & 68.834$^{***}$ (df = 5; 679) & 87.025$^{***}$ (df = 6; 678) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\section*{Robustness Checks}
+One robustness check for this research question regards the relationship between rent-seeking and resource cursed countries. The literature suggests those factors are related, so I ran the models again with an interaction term, which was insignificant. 
+
+Second, since the rent-seeking variable was the only one of the three hypotheses that showed any significant predicting power, I created two new and different operationalizations to further test the ratio of oil revenue to total tax revenue. First, oil profits as a measure of rent-seeking was insignificantly related to economic growth, as was the oil rents measure as calculated by the World Bank. This indicates that the operationalization I chose was adequate and uniquely predicts the effects seen.
+
+\section*{Conclusion}
+
+The main results are quite clear. There is consistent support at the .05 level for the rent-seeking hypothesis, that suggests as a country is more dependent on oil revenue, their economic growth will slow. The investor behavior support hypothesis had limited support which disappears once the resource curse is added to the model. My hypothesis of tax structures was insignificant across the models. My desire in the future for this research is to gather better and more robust data to better operationalize this variable and revisit the question about its relationship to economic growth.
+
+
+
+\begin{table}[h] \centering 
+  \caption{Effects of the Interaction between Rent-seeking and Resource Curse} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Real per capita GDP, logged \\ 
+\hline \\[-1.8ex] 
+ Rent seeking & 0.037$^{**}$ \\ 
+  & (0.018) \\ 
+  & \\ 
+ Investor behavior & $-$0.011 \\ 
+  & (0.009) \\ 
+  & \\ 
+ Tax structures & 0.0002 \\ 
+  & (0.001) \\ 
+  & \\ 
+ Polity IV & 0.006$^{***}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ Resource Curse & $-$0.734$^{***}$ \\ 
+  & (0.038) \\ 
+  & \\ 
+ Population & $-$0.000$^{***}$ \\ 
+  & (0.000) \\ 
+  & \\ 
+ Interaction & 0.014 \\ 
+  & (0.020) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 702 \\ 
+R$^{2}$ & 0.437 \\ 
+Adjusted R$^{2}$ & 0.417 \\ 
+F Statistic & 74.966$^{***}$ (df = 7; 677) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+
+
+
+\end{document}  
