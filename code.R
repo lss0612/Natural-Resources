@@ -3,7 +3,7 @@
 ##3.22.18
 
 #read in the data
-data <- read.csv("https://raw.githubusercontent.com/lss0612/Projects/master/fulldata.csv", header = TRUE)
+data <- read.csv("https://raw.githubusercontent.com/lss0612/Natural-Resources/master/fulldata.csv", header = TRUE)
 View(data)
 
 #preload script
