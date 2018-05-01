@@ -1,2 +1,2 @@
 # Projects
-This is the file I will place my class projects 
+This is the file I will place my Natural Resources work
