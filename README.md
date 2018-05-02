@@ -1,2 +1,2 @@
 # Projects
-This is the file I will place my Natural Resources work
+This file contains work done in Political Economy of Natural Resources, Dr Jonas Bunte professor
